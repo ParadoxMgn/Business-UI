@@ -1,0 +1,52 @@
+// Меню бургер =================================================================================================================================
+
+/* <div class="burger">
+          <span></span>
+        </div> */          // HTML burger
+
+// =============================================================================================================================================
+.burger {
+  @media (max-width: $wd3) {
+    position: absolute;
+    right: 20px;
+    width: 25px;
+    height: 17px;
+    z-index: 11;
+  }
+}
+.burger span,
+.burger::after,
+.burger::before {
+  @media (max-width: $wd3) {
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background-color: #000;
+    top: 7px;
+    left: 0px;
+    transition: all 0.3s ease 0s;
+  }
+}
+.burger::before {
+  @media (max-width: $wd3) {
+    content: '';
+    top: 0;
+  }
+}
+.burger::after {
+  @media (max-width: $wd3) {
+    content: '';
+    top: 14px;
+  } 
+}
+.burger.active span{
+  display: none;
+}
+.burger.active::after {
+  top: 7px;
+  transform: rotate(45deg);
+}
+.burger.active::before {
+  top: 7px;
+  transform: rotate(-45deg);
+}
